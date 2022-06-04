@@ -1,0 +1,130 @@
+/* Screens */
+@mixin xs-screen() {
+    @media (min-width: 375px) {
+      @content;
+    }
+  }
+  
+  @mixin sm-screen() {
+    @media (min-width: 425px) {
+      @content;
+    }
+  }
+  
+  @mixin md-screen() {
+    @media (min-width: 768px) {
+      @content;
+    }
+  }
+  
+  @mixin lg-screen() {
+    @media (min-width: 1024px) {
+      @content;
+    }
+  }
+  
+  @mixin xl-screen() {
+    @media (min-width: 1366px) {
+      @content;
+    }
+  }
+
+  @mixin xxl-screen() {
+    @media (min-width: 1920px) {
+      @content;
+    }
+  }
+  
+  /* Custom screens */
+  @mixin custom-screen($res) {
+    @media (min-width: $res) {
+      @content;
+    }
+  }
+
+  @mixin responsive-div($width, $height){
+      width: $width;
+      
+      &:after {
+        content: "";
+        display: block;
+        padding-bottom: $height;
+      }
+  }
+  
+  /* Transition */
+  @mixin transition {
+    -webkit-transition: all ease-out;
+    -moz-transition: all 1.5s ease-out;
+    -o-transition: all 1.5s ease-out;
+    -ms-transition: all 1.5s ease-out;
+    transition: all 1.5s ease-out;
+  }
+  
+  /* Center align */
+  @mixin center-align {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  /* Vertical aligned */
+  @mixin vertical-align {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  /* Horizontal align */
+  @mixin horizontal-align {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  /* Background cover */
+  @mixin background-cover {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  /* Text Shortening */
+  @mixin text-shorten {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  /* Push auto */
+  @mixin push--auto {
+    margin: { 
+        left: auto;
+        right: auto;
+    }
+  }
+  
+  @mixin square-div {
+    width: 100%;
+    
+    &::after {
+      content: "";
+      display: block;
+      padding-bottom: 100%;
+    }
+  }
+
+  @mixin white-filter {
+    filter: invert(100%) sepia(0%) saturate(7482%) hue-rotate(13deg) brightness(119%) contrast(91%);
+  }
+
+  @mixin black-filter {
+    filter: invert(0%) sepia(0%) saturate(7489%) hue-rotate(297deg) brightness(101%) contrast(104%);
+  }
+
+  @mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+  }

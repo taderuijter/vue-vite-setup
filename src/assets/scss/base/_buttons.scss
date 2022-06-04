@@ -1,0 +1,77 @@
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 15px 45px;
+  @include border-radius(30px);
+
+  &__primary {
+    background-color: $navy;
+    color: $white;
+    border: none;
+
+    &:hover {
+      background-color: $blue;
+      color: $white;
+      cursor: pointer;
+    }
+
+    &:focus-visible {
+      color: $white;
+      background-color: $blue;
+      outline: 5px solid lighten($blue, 40%);
+    }
+  }
+
+  &__white {
+    background-color: $white;
+    color: $navy;
+    border: none;
+  }
+
+  &__transparant {
+    background-color: transparent;
+    color: $navy;
+    border: 2px solid $navy;
+
+    &:hover {
+      border-color: $blue;
+      color: $white;
+      background: $blue;
+    }
+
+    &:focus-visible {
+      border-color: $blue;
+      color: $white;
+      background-color: $blue;
+      outline: 5px solid lighten($blue, 40%);
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    padding: 5px 15px;
+    text-decoration: underline;
+    font-weight: 600;
+    font-size: 14px;
+    @include border-radius(30px);
+
+    &:hover {
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    &:focus-visible {
+      background-color: $navy;
+      color: $white;
+      outline: none;
+      text-decoration: none;
+    }
+  }
+
+  // Options
+  &--full {
+    width: 100%;
+  }
+}
